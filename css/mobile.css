@@ -1,0 +1,26 @@
+@import "/css/variables.css";
+
+.logo .menu .navlogo {
+  background: #333;
+  display: block;
+  height: 4px;
+  margin-top: 3px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 32px;
+}
+
+.logo .menu .navlogo::before,
+.logo .menu .navlogo::after {
+  background: var(--hamburger-color);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+html {
+  background-color: brown;
+}
