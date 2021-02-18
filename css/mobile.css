@@ -1,17 +1,37 @@
 @import "/css/variables.css";
 
-.logo .menu .navlogo {
-  background: #333;
-  display: block;
-  height: 4px;
-  margin-top: 3px;
-  position: relative;
-  transition: background 0.2s ease-out;
-  width: 32px;
+span {
+  left: 5px;
+  top: 15px;
 }
 
-.logo .menu .navlogo::before,
-.logo .menu .navlogo::after {
+body {
+  background-color: var(--background-color);
+}
+
+h1 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.menu .navlogo {
+  background: #333;
+  display: block;
+  height: calc(var(--nav-button-size) * 3px);
+  margin-top: 3px;
+  position: relative;
+  z-index: 2;
+  transition: background 0.2s ease-out;
+  width: calc(var(--nav-button-size) * 16px);
+}
+
+.menu .navlogo::before,
+.menu .navlogo::after {
   background: var(--hamburger-color);
   content: '';
   display: block;
@@ -21,6 +41,58 @@
   width: 100%;
 }
 
-html {
-  background-color: brown;
+.menu .navlogo::before {
+  top: calc(var(--nav-button-size) * 5px);
+}
+
+.menu .navlogo::after {
+  top: calc(var(--nav-button-size) * -5px);
+}
+
+.hiddenbutton {
+  visibility: hidden;
+}
+
+.menu .hiddenbutton:checked ~ .checkbtn .navlogo {
+  background: transparent;
+}
+
+.menu .hiddenbutton:checked ~ .checkbtn .navlogo::before {
+  transform: rotate(-45deg);
+}
+
+.menu .hiddenbutton:checked ~ .checkbtn .navlogo::after {
+  transform: rotate(45deg);
+}
+
+.menu .hiddenbutton:checked ~ .checkbtn:not(.steps) .navlogo::before,
+.menu .hiddenbutton:checked ~ .checkbtn:not(.steps) .navlogo::after {
+  top: 0;
+}
+
+.navMenu {
+  background-color: var(--nav-background);
+  position: absolute;
+  width: 100%;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.navMenu a {
+  text-decoration: none;
+  font-family: var(--nav-font);
+}
+
+.navMenu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.menu .hiddenbutton:checked ~ ul {
+  transform: none;
+  width: 100%;
 }

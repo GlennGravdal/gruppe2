@@ -1,8 +1,21 @@
 @import url('/css/mobile.css') screen and (max-width:767px);
-@import url('/css/tablet.css') screen and (min-width:768px);
+@import url('/css/tablet.css') screen and (min-width:768px) and (max-width:975px);
 @import url('/css/desktop.css') screen and (min-width:976px);
 
 :root {
-  --variable: #fff;
+  /* Element farger */
   --hamburger-color: #000;
+
+  /* Font settings */
+  --nav-font: arial, helvetica, sans-serif;
+  --nav-font-size-desktop: 16px;
+  --nav-font-size-tablet: 16px;
+  --nav-font-size-mobile: 16px;
+
+  /* Bakgrunnsfarger */
+  --background-color: #ccc;
+  --nav-background: #fff;
+
+  /* Størrelses-multiplikatorer */
+  --nav-button-size: 2;
 }
