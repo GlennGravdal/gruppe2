@@ -1,5 +1,13 @@
 @import "/css/variables.css";
 
 body {
-  background-color: blue;
+  background-color: var(--background-color);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.hiddenbutton {
+  visibility: hidden;
 }
